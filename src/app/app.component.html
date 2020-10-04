@@ -1,0 +1,18 @@
+<app-header (featureSelected)="onNavigate($event)"></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-recipes *ngIf="loadedFeature === 'recipes'"></app-recipes>
+      <app-shopping-list *ngIf="loadedFeature !== 'recipes'"></app-shopping-list>
+    </div>
+  </div>
+  <p appBasicHighLight>Style me with basic directive!</p>
+  <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'pink'">Style me with better directive!</p>
+  <p *appUnless="loadedFeature !== 'recipes'">text</p>
+  <div [ngSwitch]="value">
+    <p *ngSwitchCase="5">Value is 5</p>
+    <p *ngSwitchCase="10">Value is 10</p>
+    <p *ngSwitchCase="15">Value is 15</p>
+    <p *ngSwitchCase="Default">Value is Default</p>
+  </div>
+</div>
