@@ -7,12 +7,12 @@
     </div>
   </div>
   <p appBasicHighLight>Style me with basic directive!</p>
-  <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'pink'">Style me with better directive!</p>
-  <p *appUnless="loadedFeature !== 'recipes'">text</p>
+  <p appBetterHighlight [defaultColor]="'yellow'" highlightColor="pink">Style me with better directive!</p> <!-- you write prop in [] + "''" or simple-->
+  <p *appUnless="loadedFeature !== 'recipes'">text</p> <!-- structural directive appUnless-->
   <div [ngSwitch]="value">
     <p *ngSwitchCase="5">Value is 5</p>
     <p *ngSwitchCase="10">Value is 10</p>
     <p *ngSwitchCase="15">Value is 15</p>
-    <p *ngSwitchCase="Default">Value is Default</p>
+    <p *ngSwitchDefault>Value is Default</p>
   </div>
 </div>
