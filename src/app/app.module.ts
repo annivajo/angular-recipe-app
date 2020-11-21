@@ -13,6 +13,9 @@ import {BasicHighlightDirective} from './basic-highlight/basic-highlight.directi
 import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
 import { UnlessDirective } from './unless.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
+import {LoggingService} from './logging.service';
+import {RecipeService} from './recipes/recipe.service';
+import {ShoppingListService} from './shopping-list/shopping-list.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [LoggingService, RecipeService, ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
